@@ -1,18 +1,21 @@
 ﻿using Login.Models;
+using Login.Services; // Dodaj servis za generisanje tokena
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 
 [ApiController]
 [Route("api/[controller]")]
-public class AccountController : ControllerBase // Umesto Controller koristi ControllerBase za API
+public class AccountController : ControllerBase
 {
     private readonly UserManager<User> _userManager;
     private readonly SignInManager<User> _signInManager;
+    private readonly JwtTokenService _jwtTokenService; // Dodaj servis za generisanje tokena
 
-    public AccountController(UserManager<User> userManager, SignInManager<User> signInManager)
+    public AccountController(UserManager<User> userManager, SignInManager<User> signInManager, JwtTokenService jwtTokenService)
     {
         _userManager = userManager;
         _signInManager = signInManager;
+        _jwtTokenService = jwtTokenService; // Injektovanje servisa za token
     }
 
     // POST /api/account/register
@@ -58,18 +61,26 @@ public class AccountController : ControllerBase // Umesto Controller koristi Con
         return BadRequest(ModelState);
     }
 
-
     // POST /api/account/login
     [HttpPost("login")]
     public async Task<IActionResult> Login(LoginViewModel model)
     {
         if (ModelState.IsValid)
         {
-            var result = await _signInManager.PasswordSignInAsync(model.UserName, model.Password, isPersistent: false, lockoutOnFailure: false);
+            var user = await _userManager.FindByNameAsync(model.UserName);
+            if (user == null)
+            {
+                return BadRequest(new { message = "Ne postoji korisnik sa tim korisničkim imenom." });
+            }
+
+            var result = await _signInManager.PasswordSignInAsync(user, model.Password, isPersistent: false, lockoutOnFailure: false);
 
             if (result.Succeeded)
             {
-                return Ok(new { message = "Uspesno ste se ulogovali." });
+                // Generiši JWT token
+                var token = await _jwtTokenService.GenerateTokenAsync(user);
+
+                return Ok(new { message = "Uspesno ste se ulogovali.", token });
             }
 
             return BadRequest(new { message = "Neuspesno logovanje." });

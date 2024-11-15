@@ -264,3 +264,6 @@ C:\Users\slavi\source\repos\Login\Login\bin\Debug\net8.0\runtimes\win\lib\net7.0
 C:\Users\slavi\source\repos\Login\Login\bin\Debug\net8.0\Login.staticwebassets.runtime.json
 C:\Users\slavi\source\repos\Login\Login\obj\Debug\net8.0\Login.RazorAssemblyInfo.cache
 C:\Users\slavi\source\repos\Login\Login\obj\Debug\net8.0\Login.RazorAssemblyInfo.cs
+C:\Users\slavi\source\repos\Login\Login\obj\Debug\net8.0\Login.sourcelink.json
+C:\Users\slavi\source\repos\Login\Login\bin\Debug\net8.0\Microsoft.AspNetCore.Authentication.JwtBearer.dll
+C:\Users\slavi\source\repos\Login\Login\bin\Debug\net8.0\Microsoft.Bcl.TimeProvider.dll
