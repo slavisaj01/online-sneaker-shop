@@ -1,0 +1,77 @@
+{
+  "Version": 1,
+  "Hash": "d9i+HZ7y3JqQFyi/TZtjRI+C05uo9/C7cIaK4rUpjBY=",
+  "Source": "Login",
+  "BasePath": "_content/Login",
+  "Mode": "Default",
+  "ManifestType": "Build",
+  "ReferencedProjectsConfiguration": [],
+  "DiscoveryPatterns": [
+    {
+      "Name": "Login\\wwwroot",
+      "Source": "Login",
+      "ContentRoot": "C:\\Users\\slavi\\source\\repos\\Login\\Login\\wwwroot\\",
+      "BasePath": "_content/Login",
+      "Pattern": "**"
+    }
+  ],
+  "Assets": [
+    {
+      "Identity": "C:\\Users\\slavi\\source\\repos\\Login\\Login\\wwwroot\\css\\style.css",
+      "SourceId": "Login",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\slavi\\source\\repos\\Login\\Login\\wwwroot\\",
+      "BasePath": "_content/Login",
+      "RelativePath": "css/style.css",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "PreferTarget",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\css\\style.css"
+    },
+    {
+      "Identity": "C:\\Users\\slavi\\source\\repos\\Login\\Login\\wwwroot\\js\\loginValidation.js",
+      "SourceId": "Login",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\slavi\\source\\repos\\Login\\Login\\wwwroot\\",
+      "BasePath": "_content/Login",
+      "RelativePath": "js/loginValidation.js",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "PreferTarget",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\js\\loginValidation.js"
+    },
+    {
+      "Identity": "C:\\Users\\slavi\\source\\repos\\Login\\Login\\wwwroot\\js\\registerValidation.js",
+      "SourceId": "Login",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\slavi\\source\\repos\\Login\\Login\\wwwroot\\",
+      "BasePath": "_content/Login",
+      "RelativePath": "js/registerValidation.js",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "PreferTarget",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\js\\registerValidation.js"
+    }
+  ]
+}

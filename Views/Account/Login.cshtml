@@ -1,0 +1,36 @@
+﻿@{
+    ViewData["Title"] = "Login";
+}
+
+<head>
+    <link rel="stylesheet" href="~/css/style.css">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.19.3/jquery.validate.min.js"></script>
+
+    <!-- Tvoja lokalna JS datoteka -->
+    <script src="~/js/loginValidation.js"></script>
+</head>
+
+<div class="login-container">
+    <h2>Login</h2>
+    <form id="loginForm" method="post" asp-action="Login" asp-controller="Account">
+        <div>
+            <label for="UserName">Username</label>
+            <input type="text" id="UserName" name="UserName" asp-for="UserName" required />
+            <span class="text-danger" data-valmsg-for="UserName" data-valmsg-replace="true"></span> <!-- Greška za username -->
+        </div>
+        <div>
+            <label for="Password">Password</label>
+            <input type="password" id="Password" name="Password" asp-for="Password" required />
+            <span class="text-danger" data-valmsg-for="Password" data-valmsg-replace="true"></span> <!-- Greška za password -->
+        </div>
+        <button type="submit">Login</button>
+        <span class="text-danger" id="message"></span>
+        <div id="notification" class="notification" style="display: none;">
+            <div class="notification-content">
+                <p id="notification-message"></p>
+                <button id="okButton" class="btn btn-light">OK</button>
+            </div>
+        </div>
+    </form>
+</div>

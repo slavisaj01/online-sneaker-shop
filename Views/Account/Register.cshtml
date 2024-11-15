@@ -1,0 +1,45 @@
+﻿<head>
+    <link rel="stylesheet" href="~/css/style.css">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.19.3/jquery.validate.min.js"></script>
+
+    <!-- Tvoja lokalna JS datoteka -->
+    <script src="~/js/registerValidation.js"></script>
+</head>
+
+<div class="register-container">
+    <h2>Register</h2>
+    <form id="registerForm" method="post" asp-action="Register" asp-controller="Account">
+        <div>
+            <label for="UserName">Username</label>
+            <input type="text" id="UserName" name="UserName" asp-for="UserName" required />
+            <span class="text-danger" id="usrMessage" data-valmsg-for="UserName" data-valmsg-replace="true"></span>
+        </div>
+        <div>
+            <label for="Email">Email</label>
+            <input type="email" id="Email" name="Email" asp-for="Email" required />
+            <span class="text-danger" data-valmsg-for="Email" data-valmsg-replace="true"></span>
+        </div>
+        <div>
+            <label for="Password">Password</label>
+            <input type="password" id="Password" name="Password" asp-for="Password" required />
+            <span class="text-danger" data-valmsg-for="Password" data-valmsg-replace="true"></span>
+        </div>
+        <div>
+            <label for="ConfirmPassword">Confirm Password</label>
+            <input type="password" id="ConfirmPassword" name="ConfirmPassword" asp-for="ConfirmPassword" required />
+            <span class="text-danger" data-valmsg-for="ConfirmPassword" data-valmsg-replace="true"></span>
+        </div>
+        <button type="submit">Register</button>
+        <span class="text-danger" id="message"></span>
+        
+        <div id="notification" class="notification" style="display: none;">
+            <div class="notification-content">
+                <p id="notification-message"></p>
+                <button id="okButton" class="btn btn-light">OK</button>
+            </div>
+        </div>
+    </form>
+</div>
+
+<script src="/_framework/aspnetcore-browser-refresh.js"></script>

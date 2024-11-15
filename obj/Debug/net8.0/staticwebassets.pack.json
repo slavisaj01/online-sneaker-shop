@@ -1,0 +1,33 @@
+{
+  "Files": [
+    {
+      "Id": "C:\\Users\\slavi\\source\\repos\\Login\\Login\\wwwroot\\css\\style.css",
+      "PackagePath": "staticwebassets\\css\\style.css"
+    },
+    {
+      "Id": "C:\\Users\\slavi\\source\\repos\\Login\\Login\\wwwroot\\js\\loginValidation.js",
+      "PackagePath": "staticwebassets\\js\\loginValidation.js"
+    },
+    {
+      "Id": "C:\\Users\\slavi\\source\\repos\\Login\\Login\\wwwroot\\js\\registerValidation.js",
+      "PackagePath": "staticwebassets\\js\\registerValidation.js"
+    },
+    {
+      "Id": "obj\\Debug\\net8.0\\staticwebassets\\msbuild.Login.Microsoft.AspNetCore.StaticWebAssets.props",
+      "PackagePath": "build\\Microsoft.AspNetCore.StaticWebAssets.props"
+    },
+    {
+      "Id": "obj\\Debug\\net8.0\\staticwebassets\\msbuild.build.Login.props",
+      "PackagePath": "build\\Login.props"
+    },
+    {
+      "Id": "obj\\Debug\\net8.0\\staticwebassets\\msbuild.buildMultiTargeting.Login.props",
+      "PackagePath": "buildMultiTargeting\\Login.props"
+    },
+    {
+      "Id": "obj\\Debug\\net8.0\\staticwebassets\\msbuild.buildTransitive.Login.props",
+      "PackagePath": "buildTransitive\\Login.props"
+    }
+  ],
+  "ElementsToRemove": []
+}

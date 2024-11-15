@@ -1,0 +1,128 @@
+﻿using Login.Models;
+using Microsoft.AspNetCore.Identity;
+using Microsoft.AspNetCore.Mvc;
+using Microsoft.Extensions.Logging;
+using System.Linq;
+using System.Threading.Tasks;
+
+namespace Login.Controllers
+{
+    public class AccountController : Controller
+    {
+        private readonly UserManager<User> _userManager;
+        private readonly SignInManager<User> _signInManager;
+        private readonly ILogger<AccountController> _logger;
+
+        public AccountController(UserManager<User> userManager, SignInManager<User> signInManager, ILogger<AccountController> logger)
+        {
+            _userManager = userManager;
+            _signInManager = signInManager;
+            _logger = logger;
+        }
+
+        // GET metoda za prikazivanje forme za registraciju
+        [HttpGet]
+        public IActionResult Register()
+        {
+            return View(); // Vraća stranicu sa formularom
+        }
+
+        // POST metoda za registraciju korisnika
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public async Task<IActionResult> Register(RegisterViewModel model)
+        {
+            if (ModelState.IsValid)
+            {
+                // Validacija lozinke i potvrde lozinke
+                if (model.Password != model.ConfirmPassword)
+                {
+                    ModelState.AddModelError("ConfirmPassword", "Lozinke se ne poklapaju.");
+                    return View(model); // Vraća obrazac sa greškom
+                }
+
+                // Provera da li je korisničko ime već zauzeto
+                var existingUser = await _userManager.FindByNameAsync(model.UserName);
+                if (existingUser != null)
+                {
+                    ModelState.AddModelError("UserName", "Korisničko ime je već zauzeto.");
+                    return View(model); // Vraća obrazac sa greškom
+                }
+
+                // Provera da li je email već registrovan
+                var existingEmail = await _userManager.FindByEmailAsync(model.Email);
+                if (existingEmail != null)
+                {
+                    ModelState.AddModelError("Email", "Email je već registrovan.");
+                    return View(model); // Vraća obrazac sa greškom
+                }
+
+                // Kreiranje novog korisnika
+                var user = new User
+                {
+                    UserName = model.UserName,
+                    Email = model.Email
+                };
+
+                // Kreiranje korisnika u bazi podataka
+                var result = await _userManager.CreateAsync(user, model.Password);
+
+                if (result.Succeeded)
+                {
+                    // Ako je registracija uspešna, preusmeri na početnu stranu
+                    return RedirectToAction("Index", "Home");
+                }
+
+                // Ako postoji greška, dodaj greške u ModelState
+                foreach (var error in result.Errors)
+                {
+                    ModelState.AddModelError("", error.Description);
+                    _logger.LogError($"Greška pri kreiranju korisnika: {error.Description}");
+                }
+            }
+            else
+            {
+                // Logovanje grešaka ako model nije validan
+                foreach (var error in ModelState.Values.SelectMany(v => v.Errors))
+                {
+                    _logger.LogError($"Greška: {error.ErrorMessage}");
+                }
+            }
+
+            // Ako nešto nije u redu, vrati model nazad sa greškama
+            return View(model);
+        }
+
+        // POST metoda za prijavljivanje
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public async Task<IActionResult> Login(LoginViewModel model)
+        {
+            if (ModelState.IsValid)
+            {
+                var result = await _signInManager.PasswordSignInAsync(model.UserName, model.Password, isPersistent: false, lockoutOnFailure: false);
+
+                if (result.Succeeded)
+                {
+                    return RedirectToAction("Index", "Home");
+                }
+                else if (result.IsLockedOut)
+                {
+                    ModelState.AddModelError("", "Korisnički nalog je zaključan.");
+                    return View(model);
+                }
+                else
+                {
+                    ModelState.AddModelError("", "Pogrešno korisničko ime ili lozinka.");
+                    return View(model);
+                }
+            }
+            return View(model);
+        }
+        [HttpGet]
+        public IActionResult Login()
+        {
+            return View(); // Vraća stranicu sa formularom
+        }
+    }
+}

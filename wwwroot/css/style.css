@@ -1,0 +1,203 @@
+﻿/* Globalni stil za telo stranice */
+body {
+    font-family: 'Roboto', sans-serif; /* Novi, lepši font */
+    background-color: #1e3a5f; /* Tamnija plava boja pozadine */
+    color: white; /* Bela boja teksta */
+    margin: 0;
+    padding: 0;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    flex-direction: column; /* Vertikalno poravnanje svih kontejnera */
+}
+
+/* Stil za kontejner dobrodošlice */
+.welcome-container {
+    background-color: #1d3557; /* Tamno plava boja pozadine */
+    padding: 2.5em;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    max-width: 500px;
+    margin-bottom: 2em;
+}
+
+/* Stil za kontejner registracije */
+.register-container {
+    background-color: #1d3557; /* Tamno plava boja pozadine */
+    padding: 2.5em;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    max-width: 500px;
+    margin-bottom: 2em;
+}
+
+/* Stil za kontejner login forme */
+.login-container {
+    background-color: #1d3557; /* Tamno plava boja pozadine za login kontejner */
+    padding: 2.5em;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    max-width: 500px;
+    margin-bottom: 2em;
+}
+
+/* Stil za zaglavlje */
+h2 {
+    font-size: 2.5em;
+    color: white;
+    margin-bottom: 1.5em;
+    font-weight: 600;
+}
+
+/* Stil za formu */
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    align-items: stretch;
+}
+
+/* Stil za input polja */
+input {
+    width: 100%;
+    padding: 0.9em;
+    font-size: 1.1em;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    background-color: #fff;
+    color: #333;
+    margin-top: 0.5em;
+    transition: border-color 0.3s ease;
+}
+
+    /* Fokus na input polju */
+    input:focus {
+        border-color: #457b9d;
+        outline: none;
+    }
+
+/* Stil za dugme */
+button {
+    padding: 1em;
+    background-color: #457b9d;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    font-size: 1.2em;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    font-weight: bold;
+    margin-top: 1.5em;
+    width: 90%;
+    max-width: 350px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+    /* Efekat pri hover-u na dugmetu */
+    button:hover {
+        background-color: #3b6a85;
+    }
+
+/* Stilizacija labela */
+label {
+    color: #f1f1f1;
+    font-size: 1.1em;
+}
+
+/* Stil za responsivnost */
+@media (max-width: 600px) {
+    .login-container, .register-container, .welcome-container {
+        padding: 1.5em;
+        width: 90%;
+    }
+
+    h2 {
+        font-size: 2em;
+    }
+
+    button {
+        font-size: 1em;
+    }
+}
+input.error {
+    border-color: red; /* Crvena ivica kad je unos nevalidan */
+    background-color: #ffdddd; /* Svetlo crvena pozadina */
+}
+
+/* Stil za poruke o grešci */
+label.error {
+    color: red; /* Crvena boja za tekst greške */
+    font-size: 0.9em;
+    font-weight: normal;
+    margin-top: 5px;
+}
+.message {
+    padding: 15px;
+    margin: 10px 0;
+    border-radius: 5px;
+    font-size: 16px;
+    font-weight: bold;
+    text-align: center;
+    color: white;
+    display: none; /* Sakriveno dok se ne prikaže */
+}
+
+    /* Poruka o uspehu */
+    .message.success {
+        background-color: #28a745; /* Zeleni pozadinski color za uspeh */
+    }
+
+    /* Poruka o grešci */
+    .message.error {
+        background-color: #dc3545; /* Crveni pozadinski color za greške */
+    }
+
+.notification {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: linear-gradient(145deg, #b0bec5, #90a4ae);
+    padding: 25px 30px;
+    border-radius: 15px;
+    color: white;
+    text-align: center;
+    font-size: 18px;
+    font-weight: bold;
+    display: none;
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
+    z-index: 9999;
+    width: 80%;
+    max-width: 400px;
+    min-height: 120px;
+}
+
+    /* Stil za sadržaj unutar notification-a */
+    .notification .notification-content {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    /* Stil za dugme unutar notification-a */
+    .notification button {
+        margin-top: 15px;
+        padding: 10px 20px;
+        background-color: white;
+        color: #607d8b;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer; /* Dodan cursor */
+    }
+
+        /* Hover efekat za dugme */
+        .notification button:hover {
+            background-color: #f5f5f5;
+        }
+
