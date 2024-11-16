@@ -1,11 +1,12 @@
-﻿
+﻿using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
 namespace Login.Controllers
 {
     public class HomeController : Controller
     {
-        public IActionResult Index()
+        [HttpGet]
+        public IActionResult HomePage()
         {
             return View();
         }

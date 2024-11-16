@@ -1,136 +1,19 @@
 {
   "Version": 1,
-  "Hash": "MeT2i7o1FO/BS1ATYieysqFc3eVz7q3JxN+GHECMVo0=",
-  "Source": "Login",
-  "BasePath": "_content/Login",
-  "Mode": "Default",
   "ManifestType": "Build",
-  "ReferencedProjectsConfiguration": [],
-  "DiscoveryPatterns": [
-    {
-      "Name": "Login\\wwwroot",
-      "Source": "Login",
-      "ContentRoot": "C:\\Users\\slavi\\source\\repos\\Login\\Login\\wwwroot\\",
-      "BasePath": "_content/Login",
-      "Pattern": "**"
-    }
-  ],
-  "Assets": [
-    {
-      "Identity": "C:\\Users\\slavi\\source\\repos\\Login\\Login\\wwwroot\\css\\style.css",
-      "SourceId": "Login",
-      "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\slavi\\source\\repos\\Login\\Login\\wwwroot\\",
-      "BasePath": "_content/Login",
-      "RelativePath": "css/style#[.{fingerprint}]?.css",
-      "AssetKind": "All",
-      "AssetMode": "All",
-      "AssetRole": "Primary",
-      "AssetMergeBehavior": "",
-      "AssetMergeSource": "",
-      "RelatedAsset": "",
-      "AssetTraitName": "",
-      "AssetTraitValue": "",
-      "Fingerprint": "58sg1flzyl",
-      "Integrity": "G8B1tAFnlnf3LmZtTZ6aWbaQLI7o+zeyGCOKXrCFuwo=",
-      "CopyToOutputDirectory": "Never",
-      "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot\\css\\style.css"
-    },
-    {
-      "Identity": "C:\\Users\\slavi\\source\\repos\\Login\\Login\\wwwroot\\css\\styles.css",
-      "SourceId": "Login",
-      "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\slavi\\source\\repos\\Login\\Login\\wwwroot\\",
-      "BasePath": "_content/Login",
-      "RelativePath": "css/styles#[.{fingerprint}]?.css",
-      "AssetKind": "All",
-      "AssetMode": "All",
-      "AssetRole": "Primary",
-      "AssetMergeBehavior": "",
-      "AssetMergeSource": "",
-      "RelatedAsset": "",
-      "AssetTraitName": "",
-      "AssetTraitValue": "",
-      "Fingerprint": "050gf1li0j",
-      "Integrity": "TLhg5T7bwuGuuPHHrLtxGHT9a1GENI8pcIdRStzaPQ0=",
-      "CopyToOutputDirectory": "Never",
-      "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot\\css\\styles.css"
-    },
-    {
-      "Identity": "C:\\Users\\slavi\\source\\repos\\Login\\Login\\wwwroot\\js\\layout.js",
-      "SourceId": "Login",
-      "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\slavi\\source\\repos\\Login\\Login\\wwwroot\\",
-      "BasePath": "_content/Login",
-      "RelativePath": "js/layout#[.{fingerprint}]?.js",
-      "AssetKind": "All",
-      "AssetMode": "All",
-      "AssetRole": "Primary",
-      "AssetMergeBehavior": "",
-      "AssetMergeSource": "",
-      "RelatedAsset": "",
-      "AssetTraitName": "",
-      "AssetTraitValue": "",
-      "Fingerprint": "3r8b2a0bt1",
-      "Integrity": "8ZRc1sGeVrPBx4lD717BgRaQekyh78QKV9SKsdt638U=",
-      "CopyToOutputDirectory": "Never",
-      "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot\\js\\layout.js"
-    },
-    {
-      "Identity": "C:\\Users\\slavi\\source\\repos\\Login\\Login\\wwwroot\\js\\loginValidation.js",
-      "SourceId": "Login",
-      "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\slavi\\source\\repos\\Login\\Login\\wwwroot\\",
-      "BasePath": "_content/Login",
-      "RelativePath": "js/loginValidation#[.{fingerprint}]?.js",
-      "AssetKind": "All",
-      "AssetMode": "All",
-      "AssetRole": "Primary",
-      "AssetMergeBehavior": "",
-      "AssetMergeSource": "",
-      "RelatedAsset": "",
-      "AssetTraitName": "",
-      "AssetTraitValue": "",
-      "Fingerprint": "vb7vmg5pc7",
-      "Integrity": "29yLFm5OCAs9W2JFYGIWe0ENUw+0zpcsoN1Gvym+JN0=",
-      "CopyToOutputDirectory": "Never",
-      "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot\\js\\loginValidation.js"
-    },
-    {
-      "Identity": "C:\\Users\\slavi\\source\\repos\\Login\\Login\\wwwroot\\js\\registerValidation.js",
-      "SourceId": "Login",
-      "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\slavi\\source\\repos\\Login\\Login\\wwwroot\\",
-      "BasePath": "_content/Login",
-      "RelativePath": "js/registerValidation#[.{fingerprint}]?.js",
-      "AssetKind": "All",
-      "AssetMode": "All",
-      "AssetRole": "Primary",
-      "AssetMergeBehavior": "",
-      "AssetMergeSource": "",
-      "RelatedAsset": "",
-      "AssetTraitName": "",
-      "AssetTraitValue": "",
-      "Fingerprint": "lbd2l62452",
-      "Integrity": "8dwfeZjlywwhbIOlBiR/0HJjoF+gkblprUHXRAFkZJM=",
-      "CopyToOutputDirectory": "Never",
-      "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot\\js\\registerValidation.js"
-    }
-  ],
   "Endpoints": [
     {
       "Route": "css/style.58sg1flzyl.css",
-      "AssetFile": "C:\\Users\\slavi\\source\\repos\\Login\\Login\\wwwroot\\css\\style.css",
+      "AssetFile": "css/style.css",
       "Selectors": [],
       "ResponseHeaders": [
         {
           "Name": "Accept-Ranges",
           "Value": "bytes"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
         },
         {
           "Name": "Content-Length",
@@ -147,10 +30,6 @@
         {
           "Name": "Last-Modified",
           "Value": "Fri, 15 Nov 2024 16:51:29 GMT"
-        },
-        {
-          "Name": "Cache-Control",
-          "Value": "max-age=31536000, immutable"
         }
       ],
       "EndpointProperties": [
@@ -159,23 +38,27 @@
           "Value": "58sg1flzyl"
         },
         {
-          "Name": "label",
-          "Value": "css/style.css"
-        },
-        {
           "Name": "integrity",
           "Value": "sha256-G8B1tAFnlnf3LmZtTZ6aWbaQLI7o+zeyGCOKXrCFuwo="
+        },
+        {
+          "Name": "label",
+          "Value": "css/style.css"
         }
       ]
     },
     {
       "Route": "css/style.css",
-      "AssetFile": "C:\\Users\\slavi\\source\\repos\\Login\\Login\\wwwroot\\css\\style.css",
+      "AssetFile": "css/style.css",
       "Selectors": [],
       "ResponseHeaders": [
         {
           "Name": "Accept-Ranges",
           "Value": "bytes"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "no-cache"
         },
         {
           "Name": "Content-Length",
@@ -192,10 +75,6 @@
         {
           "Name": "Last-Modified",
           "Value": "Fri, 15 Nov 2024 16:51:29 GMT"
-        },
-        {
-          "Name": "Cache-Control",
-          "Value": "no-cache"
         }
       ],
       "EndpointProperties": [
@@ -207,12 +86,16 @@
     },
     {
       "Route": "css/styles.050gf1li0j.css",
-      "AssetFile": "C:\\Users\\slavi\\source\\repos\\Login\\Login\\wwwroot\\css\\styles.css",
+      "AssetFile": "css/styles.css",
       "Selectors": [],
       "ResponseHeaders": [
         {
           "Name": "Accept-Ranges",
           "Value": "bytes"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
         },
         {
           "Name": "Content-Length",
@@ -229,10 +112,6 @@
         {
           "Name": "Last-Modified",
           "Value": "Sat, 25 Mar 2023 22:12:00 GMT"
-        },
-        {
-          "Name": "Cache-Control",
-          "Value": "max-age=31536000, immutable"
         }
       ],
       "EndpointProperties": [
@@ -241,23 +120,27 @@
           "Value": "050gf1li0j"
         },
         {
-          "Name": "label",
-          "Value": "css/styles.css"
-        },
-        {
           "Name": "integrity",
           "Value": "sha256-TLhg5T7bwuGuuPHHrLtxGHT9a1GENI8pcIdRStzaPQ0="
+        },
+        {
+          "Name": "label",
+          "Value": "css/styles.css"
         }
       ]
     },
     {
       "Route": "css/styles.css",
-      "AssetFile": "C:\\Users\\slavi\\source\\repos\\Login\\Login\\wwwroot\\css\\styles.css",
+      "AssetFile": "css/styles.css",
       "Selectors": [],
       "ResponseHeaders": [
         {
           "Name": "Accept-Ranges",
           "Value": "bytes"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "no-cache"
         },
         {
           "Name": "Content-Length",
@@ -274,10 +157,6 @@
         {
           "Name": "Last-Modified",
           "Value": "Sat, 25 Mar 2023 22:12:00 GMT"
-        },
-        {
-          "Name": "Cache-Control",
-          "Value": "no-cache"
         }
       ],
       "EndpointProperties": [
@@ -289,12 +168,16 @@
     },
     {
       "Route": "js/layout.3r8b2a0bt1.js",
-      "AssetFile": "C:\\Users\\slavi\\source\\repos\\Login\\Login\\wwwroot\\js\\layout.js",
+      "AssetFile": "js/layout.js",
       "Selectors": [],
       "ResponseHeaders": [
         {
           "Name": "Accept-Ranges",
           "Value": "bytes"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
         },
         {
           "Name": "Content-Length",
@@ -311,10 +194,6 @@
         {
           "Name": "Last-Modified",
           "Value": "Sat, 16 Nov 2024 14:58:09 GMT"
-        },
-        {
-          "Name": "Cache-Control",
-          "Value": "max-age=31536000, immutable"
         }
       ],
       "EndpointProperties": [
@@ -323,23 +202,27 @@
           "Value": "3r8b2a0bt1"
         },
         {
-          "Name": "label",
-          "Value": "js/layout.js"
-        },
-        {
           "Name": "integrity",
           "Value": "sha256-8ZRc1sGeVrPBx4lD717BgRaQekyh78QKV9SKsdt638U="
+        },
+        {
+          "Name": "label",
+          "Value": "js/layout.js"
         }
       ]
     },
     {
       "Route": "js/layout.js",
-      "AssetFile": "C:\\Users\\slavi\\source\\repos\\Login\\Login\\wwwroot\\js\\layout.js",
+      "AssetFile": "js/layout.js",
       "Selectors": [],
       "ResponseHeaders": [
         {
           "Name": "Accept-Ranges",
           "Value": "bytes"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "no-cache"
         },
         {
           "Name": "Content-Length",
@@ -356,10 +239,6 @@
         {
           "Name": "Last-Modified",
           "Value": "Sat, 16 Nov 2024 14:58:09 GMT"
-        },
-        {
-          "Name": "Cache-Control",
-          "Value": "no-cache"
         }
       ],
       "EndpointProperties": [
@@ -371,12 +250,16 @@
     },
     {
       "Route": "js/loginValidation.js",
-      "AssetFile": "C:\\Users\\slavi\\source\\repos\\Login\\Login\\wwwroot\\js\\loginValidation.js",
+      "AssetFile": "js/loginValidation.js",
       "Selectors": [],
       "ResponseHeaders": [
         {
           "Name": "Accept-Ranges",
           "Value": "bytes"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "no-cache"
         },
         {
           "Name": "Content-Length",
@@ -393,10 +276,6 @@
         {
           "Name": "Last-Modified",
           "Value": "Sat, 16 Nov 2024 16:09:07 GMT"
-        },
-        {
-          "Name": "Cache-Control",
-          "Value": "no-cache"
         }
       ],
       "EndpointProperties": [
@@ -408,12 +287,16 @@
     },
     {
       "Route": "js/loginValidation.vb7vmg5pc7.js",
-      "AssetFile": "C:\\Users\\slavi\\source\\repos\\Login\\Login\\wwwroot\\js\\loginValidation.js",
+      "AssetFile": "js/loginValidation.js",
       "Selectors": [],
       "ResponseHeaders": [
         {
           "Name": "Accept-Ranges",
           "Value": "bytes"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
         },
         {
           "Name": "Content-Length",
@@ -430,10 +313,6 @@
         {
           "Name": "Last-Modified",
           "Value": "Sat, 16 Nov 2024 16:09:07 GMT"
-        },
-        {
-          "Name": "Cache-Control",
-          "Value": "max-age=31536000, immutable"
         }
       ],
       "EndpointProperties": [
@@ -442,23 +321,27 @@
           "Value": "vb7vmg5pc7"
         },
         {
-          "Name": "label",
-          "Value": "js/loginValidation.js"
-        },
-        {
           "Name": "integrity",
           "Value": "sha256-29yLFm5OCAs9W2JFYGIWe0ENUw+0zpcsoN1Gvym+JN0="
+        },
+        {
+          "Name": "label",
+          "Value": "js/loginValidation.js"
         }
       ]
     },
     {
       "Route": "js/registerValidation.js",
-      "AssetFile": "C:\\Users\\slavi\\source\\repos\\Login\\Login\\wwwroot\\js\\registerValidation.js",
+      "AssetFile": "js/registerValidation.js",
       "Selectors": [],
       "ResponseHeaders": [
         {
           "Name": "Accept-Ranges",
           "Value": "bytes"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "no-cache"
         },
         {
           "Name": "Content-Length",
@@ -475,10 +358,6 @@
         {
           "Name": "Last-Modified",
           "Value": "Fri, 15 Nov 2024 15:52:35 GMT"
-        },
-        {
-          "Name": "Cache-Control",
-          "Value": "no-cache"
         }
       ],
       "EndpointProperties": [
@@ -490,12 +369,16 @@
     },
     {
       "Route": "js/registerValidation.lbd2l62452.js",
-      "AssetFile": "C:\\Users\\slavi\\source\\repos\\Login\\Login\\wwwroot\\js\\registerValidation.js",
+      "AssetFile": "js/registerValidation.js",
       "Selectors": [],
       "ResponseHeaders": [
         {
           "Name": "Accept-Ranges",
           "Value": "bytes"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
         },
         {
           "Name": "Content-Length",
@@ -512,10 +395,6 @@
         {
           "Name": "Last-Modified",
           "Value": "Fri, 15 Nov 2024 15:52:35 GMT"
-        },
-        {
-          "Name": "Cache-Control",
-          "Value": "max-age=31536000, immutable"
         }
       ],
       "EndpointProperties": [
@@ -524,12 +403,12 @@
           "Value": "lbd2l62452"
         },
         {
-          "Name": "label",
-          "Value": "js/registerValidation.js"
-        },
-        {
           "Name": "integrity",
           "Value": "sha256-8dwfeZjlywwhbIOlBiR/0HJjoF+gkblprUHXRAFkZJM="
+        },
+        {
+          "Name": "label",
+          "Value": "js/registerValidation.js"
         }
       ]
     }

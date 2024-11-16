@@ -267,3 +267,7 @@ C:\Users\slavi\source\repos\Login\Login\obj\Debug\net8.0\Login.RazorAssemblyInfo
 C:\Users\slavi\source\repos\Login\Login\obj\Debug\net8.0\Login.sourcelink.json
 C:\Users\slavi\source\repos\Login\Login\bin\Debug\net8.0\Microsoft.AspNetCore.Authentication.JwtBearer.dll
 C:\Users\slavi\source\repos\Login\Login\bin\Debug\net8.0\Microsoft.Bcl.TimeProvider.dll
+C:\Users\slavi\source\repos\Login\Login\bin\Debug\net8.0\Login.staticwebassets.endpoints.json
+C:\Users\slavi\source\repos\Login\Login\obj\Debug\net8.0\staticwebassets.build.endpoints.json
+C:\Users\slavi\source\repos\Login\Login\obj\Debug\net8.0\staticwebassets\msbuild.Login.Microsoft.AspNetCore.StaticWebAssetEndpoints.props
+C:\Users\slavi\source\repos\Login\Login\obj\Debug\net8.0\staticwebassets.upToDateCheck.txt

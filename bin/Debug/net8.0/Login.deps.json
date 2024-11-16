@@ -13,6 +13,8 @@
           "Microsoft.EntityFrameworkCore": "8.0.10",
           "Microsoft.EntityFrameworkCore.SqlServer": "8.0.10",
           "Microsoft.EntityFrameworkCore.Tools": "8.0.10",
+          "Microsoft.Identity.Client": "4.56.0",
+          "Microsoft.IdentityModel.JsonWebTokens": "7.0.3",
           "Microsoft.IdentityModel.Tokens": "8.2.0",
           "Microsoft.VisualStudio.Web.CodeGeneration.Design": "8.0.6",
           "Swashbuckle.AspNetCore": "6.6.2"

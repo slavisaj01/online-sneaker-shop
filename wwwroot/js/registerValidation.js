@@ -94,7 +94,7 @@
                 // Dodaj funkcionalnost za OK dugme (zatvaranje popup-a i preusmeravanje)
                 $("#okButton").click(function () {
                     // Preusmeravanje na početnu stranu
-                    window.location.href = "/Home/Index";
+                    window.location.href = "/Public/Index";
                 });
 
                

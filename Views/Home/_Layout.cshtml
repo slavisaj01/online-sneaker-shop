@@ -1,0 +1,87 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+    <meta name="description" content="" />
+    <meta name="author" content="" />
+    <title>@ViewData["Title"] - Your Website</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-icons/1.5.0/font/bootstrap-icons.min.css" rel="stylesheet" />
+    <link href="/css/styles.css" rel="stylesheet" />
+</head>
+<body>
+    <!-- Navigation-->
+
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <div class="container px-4 px-lg-5">
+            <!-- Boldovan naziv 'Pa-Tike' -->
+            <a class="navbar-brand fw-bold" href="#!" style="font-size: 1.5rem;">Pa-tike</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0 ms-lg-4">
+                    <li class="nav-item"><a class="nav-link active" aria-current="page" href="#!">Početna</a></li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" id="navbarDropdown" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">Prodavnica</a>
+                        <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                            <li><a class="dropdown-item" href="#!">All Products</a></li>
+                            <li><hr class="dropdown-divider" /></li>
+                            <li><a class="dropdown-item" href="#!">Popular Items</a></li>
+                            <li><a class="dropdown-item" href="#!">New Arrivals</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item"><a class="nav-link" href="#!">O nama</a></li>
+                </ul>
+                <form class="d-flex">
+                    <button class="btn btn-outline-dark me-2" type="submit">
+                        <i class="bi-cart-fill me-1"></i>
+                        Cart
+                        <span class="badge bg-dark text-white ms-1 rounded-pill">0</span>
+                    </button>
+                    <!-- Log out button -->
+                    <button id="logoutButton"  class="btn btn-outline-danger" type="button">
+                        <i class="bi bi-box-arrow-right"></i> Log Out
+                    </button>
+                </form>
+            </div>
+        </div>
+    </nav>
+
+
+
+
+    <!-- Dynamic Content -->
+    <main role="main" class="container mt-4">
+        @RenderBody()
+    </main>
+
+    <!-- Footer-->
+    <footer class="py-5 bg-dark">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-md-4 text-center text-white">
+                    <h5>Kontakt</h5>
+                    <p>Adresa: Ulica 123, Beograd, Srbija</p>
+                    <p>Email: pa-tike@gmail.com</p>
+                    <p>Telefon: +381 11 556 5127</p>
+                </div>
+                <div class="col-md-4 text-center text-white">
+                    <h5>Pratite nas</h5>
+                    <a href="#" class="text-white me-3"><i class="bi bi-facebook"></i></a>
+                    <a href="#" class="text-white me-3"><i class="bi bi-instagram"></i></a>
+                    <a href="#" class="text-white me-3"><i class="bi bi-twitter"></i></a>
+                </div>
+            </div>
+            <p class="m-0 text-center text-white mt-4">&copy; 2024 - Sva prava zadržana.</p>
+        </div>
+    </footer>
+
+    <!-- Include jQuery -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <!-- Include custom script -->
+    <script src="/js/layout.js"></script>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.2.3/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

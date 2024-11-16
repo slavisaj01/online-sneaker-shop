@@ -1,11 +1,10 @@
 ﻿using Login.Data;
 using Login.Models;
-using Login.Services; // Dodaj servis za generisanje tokena
+using Login.Services;
+using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
-using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
-using Microsoft.OpenApi.Models;
-using Microsoft.AspNetCore.Authentication.JwtBearer;
+using Microsoft.Extensions.Options;
 using Microsoft.IdentityModel.Tokens;
 using System.Text;
 
@@ -18,46 +17,45 @@ namespace Login
             var builder = WebApplication.CreateBuilder(args);
 
             // Add services to the container.
-            builder.Services.AddDbContext<ApplicationDbContext>(options =>
-                options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection")));
+            builder.Services.AddDbContext<ApplicationDbContext>(
+                options => options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection")));
 
             builder.Services.AddIdentity<User, IdentityRole>()
                 .AddEntityFrameworkStores<ApplicationDbContext>()
                 .AddDefaultTokenProviders();
+
+            // Dodavanje JwtTokenService u DI kontejner
+            builder.Services.AddScoped<JwtTokenService>();
 
             builder.Services.AddAuthentication(options =>
             {
                 // Definiši šeme autentifikacije
                 options.DefaultAuthenticateScheme = JwtBearerDefaults.AuthenticationScheme;
                 options.DefaultChallengeScheme = JwtBearerDefaults.AuthenticationScheme;
+                options.DefaultScheme = JwtBearerDefaults.AuthenticationScheme;
             })
-            .AddJwtBearer(options =>
-            {
-                options.TokenValidationParameters = new TokenValidationParameters
-                {
-                    // Provera izdavača (issuer)
-                    ValidateIssuer = true,
-                    ValidIssuer = builder.Configuration["Jwt:Issuer"],
+             .AddJwtBearer(options =>
+             {
+                 options.RequireHttpsMetadata = false;
+                 options.SaveToken = true;
+                 options.TokenValidationParameters = new TokenValidationParameters
+                 {
+                     ValidateIssuer = true,
+                     ValidateIssuerSigningKey = true,
+                     ValidateAudience = true,
+                     ValidateLifetime = true,
 
-                    // Provera publike (audience)
-                    ValidateAudience = true,
-                    ValidAudience = builder.Configuration["Jwt:Audience"],
+                     ValidIssuer = builder.Configuration["Jwt:Issuer"],
+                     ValidAudience = builder.Configuration["Jwt:Audience"],
+                     IssuerSigningKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(builder.Configuration["Jwt:SecretKey"])),
+                    
+                 };
+             });
+            
+            builder.Services.AddAuthorization();
 
-                    // Provera isteka tokena
-                    ValidateLifetime = true,
 
-                    // Ključ za potpisivanje tokena
-                    IssuerSigningKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(builder.Configuration["Jwt:SecretKey"])),
-
-                    // Provera potpisa izdavača
-                    ValidateIssuerSigningKey = true
-                };
-            });
-
-            // Registruj servis za generisanje tokena
-            builder.Services.AddScoped<JwtTokenService>();
-
-            builder.Services.AddControllersWithViews();
+            builder.Services.AddControllersWithViews(); // Add support for MVC views
 
             builder.Services.AddEndpointsApiExplorer();
             builder.Services.AddSwaggerGen();
@@ -72,11 +70,14 @@ namespace Login
             }
 
             app.UseHttpsRedirection();
-            app.UseStaticFiles();
+
+            app.UseStaticFiles(); // Enables static files like CSS, JS, images
+
             app.UseRouting();
+
+            app.UseAuthentication();
             app.UseAuthorization();
 
-            // Seed podaci ako su potrebni
             using (var scope = app.Services.CreateScope())
             {
                 var services = scope.ServiceProvider;
@@ -87,7 +88,7 @@ namespace Login
 
             app.MapControllerRoute(
                 name: "default",
-                pattern: "{controller=Home}/{action=Index}/{id?}");
+                pattern: "{controller=Home}/{action=Index}/{id?}"); // Default routing for MVC
 
             app.Run();
         }

@@ -88,4 +88,13 @@ public class AccountController : ControllerBase
 
         return BadRequest(ModelState);
     }
+
+    [HttpPost("logout")]
+    public IActionResult Logout()
+    {
+        // Odjava korisnika sa servera
+        _signInManager.SignOutAsync();
+
+        return Ok(new { message = "Uspesno ste se odjavili." });
+    }
 }
