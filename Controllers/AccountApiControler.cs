@@ -1,5 +1,4 @@
 ﻿using Login.Models;
-using Login.Services; // Dodaj servis za generisanje tokena
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 
@@ -9,13 +8,11 @@ public class AccountController : ControllerBase
 {
     private readonly UserManager<User> _userManager;
     private readonly SignInManager<User> _signInManager;
-    private readonly JwtTokenService _jwtTokenService; // Dodaj servis za generisanje tokena
 
-    public AccountController(UserManager<User> userManager, SignInManager<User> signInManager, JwtTokenService jwtTokenService)
+    public AccountController(UserManager<User> userManager, SignInManager<User> signInManager)
     {
         _userManager = userManager;
         _signInManager = signInManager;
-        _jwtTokenService = jwtTokenService; // Injektovanje servisa za token
     }
 
     // POST /api/account/register
@@ -77,10 +74,7 @@ public class AccountController : ControllerBase
 
             if (result.Succeeded)
             {
-                // Generiši JWT token
-                var token = await _jwtTokenService.GenerateTokenAsync(user);
-
-                return Ok(new { message = "Uspesno ste se ulogovali.", token });
+                return Ok(new { message = "Uspesno ste se ulogovali."});
             }
 
             return BadRequest(new { message = "Neuspesno logovanje." });

@@ -10824,3 +10824,78 @@ textarea.form-control-lg {
     display: none !important;
   }
 }
+.notification {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: linear-gradient(145deg, #b0bec5, #90a4ae); /* Gradient pozadina */
+    padding: 25px 30px;
+    border-radius: 15px;
+    color: white;
+    text-align: center;
+    font-size: 18px;
+    font-weight: bold;
+    display: none; /* Početno je sakriven */
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1); /* Blagi senčenje */
+    z-index: 9999; /* Osiguraj da bude iznad drugih elemenata */
+    width: 80%; /* Širina obaveštenja */
+    max-width: 400px; /* Maksimalna širina */
+    min-height: 120px; /* Minimalna visina */
+    transition: width 0.3s ease, font-size 0.3s ease; /* Dodajemo transition za glatke promene */
+}
+
+    /* Stil za sadržaj unutar notification-a */
+    .notification .notification-content {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center; /* Centriranje sadržaja vertikalno */
+    }
+
+    /* Stil za dugme unutar notification-a */
+    .notification button {
+        margin-top: 15px;
+        padding: 10px 20px;
+        background-color: white;
+        color: #607d8b;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer; /* Kursori kada je mišić preko dugmeta */
+    }
+
+        /* Hover efekat za dugme */
+        .notification button:hover {
+            background-color: #f5f5f5;
+        }
+
+/* Animacija za prikazivanje obaveštenja */
+@keyframes showNotification {
+    from {
+        opacity: 0;
+        transform: translate(-50%, -60%); /* Početna pozicija */
+    }
+
+    to {
+        opacity: 1;
+        transform: translate(-50%, -50%); /* Konačna pozicija */
+    }
+}
+
+/* Media query za manju širinu ekrana (npr. mobilni uređaji) */
+@media (max-width: 768px) {
+    .notification {
+        width: 90%; /* Širina obaveštenja na manjim ekranima */
+        font-size: 16px; /* Smanjenje fonta */
+        padding: 20px 25px; /* Smanjenje paddinga */
+    }
+}
+
+/* Media query za još manju širinu ekrana (npr. vrlo mali uređaji) */
+@media (max-width: 480px) {
+    .notification {
+        width: 95%; /* Još manja širina na vrlo malim ekranima */
+        font-size: 14px; /* Još manje slovo */
+        padding: 15px 20px; /* Još manji padding */
+    }
+}

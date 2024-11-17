@@ -6,6 +6,7 @@ namespace Login.Controllers
     public class HomeController : Controller
     {
         [HttpGet]
+        [Authorize]
         public IActionResult HomePage()
         {
             return View();

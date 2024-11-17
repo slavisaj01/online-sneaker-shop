@@ -30,8 +30,6 @@
             data: formData,  // Posaljite podatke iz forme
             success: function (response) {
                 console.log(response); 
-                localStorage.setItem('jwtToken', response.token)
-                console.log(response.token); 
                 // Prikazivanje poruke u popup-u
                 $("#notification-message").text(response.message);  // Koristi response.message koji dolazi sa servera
                 $("#notification").css("background-color", "#28a745");  // Siva boja za uspeh
