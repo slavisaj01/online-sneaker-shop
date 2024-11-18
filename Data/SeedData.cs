@@ -1,10 +1,14 @@
-﻿using Login.Models;
+﻿using Login.Data;
+using Login.Models;
 using Microsoft.AspNetCore.Identity;
+using Microsoft.EntityFrameworkCore;
 using System.Threading.Tasks;
 
 public static class SeedData
 {
-    public static async Task Initialize(IServiceProvider serviceProvider, UserManager<User> userManager, RoleManager<IdentityRole> roleManager)
+    public static async Task Initialize(IServiceProvider serviceProvider, 
+                                        UserManager<User> userManager, 
+                                        RoleManager<IdentityRole> roleManager)
     {
         var roleName = "Admin";
         var userName = "Admin";
@@ -32,6 +36,7 @@ public static class SeedData
                 await userManager.AddToRoleAsync(user, roleName);
             }
         }
+        
     }
 }
 

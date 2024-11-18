@@ -1,11 +1,46 @@
-﻿@page
+﻿@model List<Login.Models.Product>
+
 @{
     Layout = "~/Views/Home/_Layout.cshtml";
 }
 
-<div class="row" style="height: 900px"; display: flex; justify-content: center; align-items: center; text-align: center;">
-    <div>
-        <h2>Dobrodošli u naš shop!</h2>
-        <p>Ovo je sa proizvodima.</p>
-    </div>
+<!-- Koristimo Bootstrap grid za raspored proizvoda u više kolona -->
+<div class="row" style="display: flex; justify-content: center; text-align: center;">
+    @foreach (var product in Model)
+    {
+        <div class="col-md-3 col-sm-6 col-xs-12 mb-4">
+            <!-- Kolona koja se prilagođava zavisno od ekrana -->
+            <div class="card" style="width: 100%; border-radius: 10px; box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);">
+                <!-- Slika proizvoda sa URL-om sa Unsplash-a -->
+                <img src="@product.ImageUrl" class="card-img-top" alt="@product.Name" style="height: 180px; object-fit: cover; border-top-left-radius: 10px; border-top-right-radius: 10px;">
+
+                <div class="card-body">
+                    <h5 class="card-title" style="font-size: 1.2rem; font-weight: bold; margin-bottom: 10px; color: #333;">@product.Name</h5>
+
+                    <!-- Raspored: Cena i Skladište -->
+                    <div class="d-flex justify-content-between align-items-center" style="font-size: 1rem; color: #555; margin-bottom: 15px;">
+                        <!-- Cena -->
+                        <p class="card-text" style="font-weight: bold; font-size: 1.25rem; margin: 0;">@product.Price€</p>
+
+                        <!-- Ikona skladišta -->
+                        <span style="color: @((product.InStock) ? "green" : "red"); font-size: 1.5rem;">
+                            @if (product.InStock)
+                            {
+                                <i class="fas fa-box-open"></i> <!-- Ikona za proizvod na skladištu -->
+                            }
+                            else
+                            {
+                                <i class="fas fa-box"></i> <!-- Ikona za proizvod koji nije na skladištu -->
+                            }
+                        </span>
+                    </div>
+
+                    <!-- Dugme za dodavanje u korpu -->
+                    <a href="#" id="dodajproizvod" class="btn btn-custom w-100">
+                        Dodaj u korpu
+                    </a>
+                </div>
+            </div>
+        </div>
+    }
 </div>

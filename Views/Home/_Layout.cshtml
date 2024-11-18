@@ -1,4 +1,8 @@
-﻿<!DOCTYPE html>
+﻿@{
+    var isAdmin = User.IsInRole("Admin");
+}
+
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="utf-8" />
@@ -6,14 +10,17 @@
     <meta name="description" content="" />
     <meta name="author" content="" />
     <title>@ViewData["Title"] - Your Website</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-icons/1.5.0/font/bootstrap-icons.min.css" rel="stylesheet" />
     <link href="/css/styles.css" rel="stylesheet" />
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/jquery-validation@1.19.3/dist/jquery.validate.min.js"></script>
+    <script src="/js/layout.js"></script>
 </head>
 <body>
     <!-- Navigation-->
     <nav class="navbar navbar-expand-lg navbar-light bg-light">
         <div class="container px-4 px-lg-5">
-            <!-- Boldovan naziv 'Pa-Tike' -->
             <a class="navbar-brand fw-bold" href="#!" style="font-size: 1.5rem;">Pa-tike</a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
@@ -31,6 +38,13 @@
                         </ul>
                     </li>
                     <li class="nav-item"><a class="nav-link" href="#!">O nama</a></li>
+
+                    @if (isAdmin)
+                    {
+                        <li class="nav-item">
+                            <a class="nav-link" href="javascript:void(0)" data-bs-toggle="modal" data-bs-target="#addProductModal">Dodaj proizvod</a>
+                        </li>
+                    }
                 </ul>
                 <form class="d-flex">
                     <button class="btn btn-outline-dark me-2" type="submit">
@@ -46,6 +60,57 @@
             </div>
         </div>
     </nav>
+
+    <!-- Modal for adding product -->
+    <div class="modal fade" id="addProductModal" tabindex="-1" aria-labelledby="addProductModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="addProductModalLabel">Dodaj Proizvod</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <!-- Form for adding product -->
+                    <form id="productForm">
+                        <div class="mb-3">
+                            <label for="productName" class="form-label">Naziv proizvoda</label>
+                            <input type="text" class="form-control" id="productName" name="productName" required>
+                            <span class="text-danger" id="productName-error" data-valmsg-for="productName" data-valmsg-replace="true"></span>
+                        </div>
+                        <div class="mb-3">
+                            <label for="productBrand" class="form-label">Brend</label>
+                            <input type="text" class="form-control" id="productBrand" name="productBrand" required>
+                            <span class="text-danger" id="productBrand-error" data-valmsg-for="productBrand" data-valmsg-replace="true"></span>
+                        </div>
+                        <div class="mb-3">
+                            <label for="productPrice" class="form-label">Cena</label>
+                            <input type="number" class="form-control" id="productPrice" name="productPrice" required>
+                            <span class="text-danger" id="productPrice-error" data-valmsg-for="productPrice" data-valmsg-replace="true"></span>
+                        </div>
+                        <div class="mb-3">
+                            <label for="productImageUrl" class="form-label">URL Slike</label>
+                            <input type="text" class="form-control" id="productImageUrl" name="productImageUrl" required>
+                            <span class="text-danger" id="productImageUrl-error" data-valmsg-for="productImageUrl" data-valmsg-replace="true"></span>
+                        </div>
+                        <div class="mb-3">
+                            <label for="productQuantity" class="form-label">Količina</label>
+                            <input type="number" class="form-control" id="productQuantity" name="productQuantity" required>
+                            <span class="text-danger" id="productQuantity-error" data-valmsg-for="productQuantity" data-valmsg-replace="true"></span>
+                        </div>
+                        <div class="mb-3">
+                            <label for="productSize" class="form-label">Veličina</label>
+                            <input type="text" class="form-control" id="productSize" name="productSize" required>
+                            <span class="text-danger" id="productSize-error" data-valmsg-for="productSize" data-valmsg-replace="true"></span>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="submit" class="btn btn-custom w-40" id="addProductButton">Dodaj proizvod</button>
+                        </div>
+                    </form>
+                </div>
+                
+            </div>
+        </div>
+    </div>
 
     <!-- Notification div for layout -->
     <div id="notification" class="notification" style="display: none;">
@@ -82,10 +147,10 @@
     </footer>
 
     <!-- Include jQuery -->
-    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-    <!-- Include custom script -->
-    <script src="/js/layout.js"></script>
 
+    <!-- Include Bootstrap JS -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.2.3/js/bootstrap.bundle.min.js"></script>
+
+  
 </body>
 </html>

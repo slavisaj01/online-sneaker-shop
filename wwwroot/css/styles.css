@@ -10899,3 +10899,64 @@ textarea.form-control-lg {
         padding: 15px 20px; /* Još manji padding */
     }
 }
+/* Stil za dugme u korpi */
+/* Stil za dugme */
+.btn-custom {
+    background-color: #432054; /* Svetlija plava boja */
+    color: white;
+    border: none;
+    border-radius: 25px;
+    padding: 10px 20px;
+    font-weight: bold;
+    font-size: 1rem;
+    text-transform: uppercase;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Suptilna senka */
+}
+
+    /* Efekat pri hover-u */
+    .btn-custom:hover {
+        background-color: #5F2F76; /* Još svetlija boja pri hover-u */
+        box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15); /* Blago povećanje senke */
+        color: white;
+    }
+
+    /* Fokus na dugmetu */
+    .btn-custom:focus {
+        outline: none; /* Uklanja plavi okvir */
+        box-shadow: none; /* Uklanja dodatnu senku pri fokusu */
+        color: white; /* Održava boju slova belom pri fokusu */
+    }
+.card {
+    width: 15rem;
+    margin-bottom: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 12px rgba(67, 32, 84, 0.3); /* Senka u boji #432054 */
+}
+.card-body {
+    box-shadow: 0 2px 8px rgba(67, 32, 84, 0.1); /* Suptilna senka za karticu */
+}
+
+
+/* Cena */
+.card-text {
+    font-weight: bold;
+    font-size: 1.25rem;
+    margin: 0;
+    color: #4C2A5D; /* Nova boja za cenu */
+}
+input.error {
+    border-color: red; /* Crvena ivica kad je unos nevalidan */
+    background-color: #ffdddd; /* Svetlo crvena pozadina */
+}
+
+/* Stil za poruke o grešci */
+label.error {
+    color: red; /* Crvena boja za tekst greške */
+    font-size: 0.9em;
+    font-weight: normal;
+    margin-top: 5px;
+}
+.message.error {
+    background-color: #dc3545; /* Crveni pozadinski color za greške */
+}

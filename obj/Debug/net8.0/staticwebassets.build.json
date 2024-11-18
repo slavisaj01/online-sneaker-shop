@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "oxWRf1wfHirvObxBEwL80s9U71QoQ8UQ8gsS/W6839s=",
+  "Hash": "C94wyWDX/nH3h/hm2/ddBkpJZbTLlyoaHlTNKERyckI=",
   "Source": "Login",
   "BasePath": "_content/Login",
   "Mode": "Default",
@@ -52,8 +52,8 @@
       "RelatedAsset": "",
       "AssetTraitName": "",
       "AssetTraitValue": "",
-      "Fingerprint": "u9egaot9v8",
-      "Integrity": "QmYvAPvWhhl5DiiXk2bqJqnmy4c9h4tzPlMa68lGb7k=",
+      "Fingerprint": "j7z0o14yf0",
+      "Integrity": "Py7iUfnEKawuaYZB7xI1BHLAQP39calrYTZQtXqmvtE=",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\css\\styles.css"
@@ -73,8 +73,8 @@
       "RelatedAsset": "",
       "AssetTraitName": "",
       "AssetTraitValue": "",
-      "Fingerprint": "n7z4yp6x46",
-      "Integrity": "Q5FhW/yJ8Yg5RyvA3rchNOcxSVc4PX0jFJi0Z3upXwI=",
+      "Fingerprint": "dt4qyx8izr",
+      "Integrity": "4SCBsfGu6BBokBGihkuvtwzdI/k0caEkv1v0KsVF2l0=",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\js\\layout.js"
@@ -120,6 +120,48 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\js\\registerValidation.js"
+    },
+    {
+      "Identity": "C:\\Users\\slavi\\source\\repos\\Login\\Login\\wwwroot\\Photos\\AirMax90.jpg",
+      "SourceId": "Login",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\slavi\\source\\repos\\Login\\Login\\wwwroot\\",
+      "BasePath": "_content/Login",
+      "RelativePath": "Photos/AirMax90#[.{fingerprint}]?.jpg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "Fingerprint": "nca56wz6sm",
+      "Integrity": "p7nqIV56710dsFQwWc3A+z4NAKc5WQI9BIxTzDu1ftU=",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\Photos\\AirMax90.jpg"
+    },
+    {
+      "Identity": "C:\\Users\\slavi\\source\\repos\\Login\\Login\\wwwroot\\Photos\\AirMax90zute.jpg",
+      "SourceId": "Login",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\slavi\\source\\repos\\Login\\Login\\wwwroot\\",
+      "BasePath": "_content/Login",
+      "RelativePath": "Photos/AirMax90zute#[.{fingerprint}]?.jpg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "Fingerprint": "gk4tzbzljv",
+      "Integrity": "YDsUfT+9+4lyrFxqRJp3KRkLIo8dCTbOHxTOZiaRz0U=",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\Photos\\AirMax90zute.jpg"
     }
   ],
   "Endpoints": [
@@ -146,7 +188,7 @@
         },
         {
           "Name": "Last-Modified",
-          "Value": "Sun, 17 Nov 2024 00:14:48 GMT"
+          "Value": "Sun, 17 Nov 2024 14:16:49 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -183,7 +225,7 @@
         },
         {
           "Name": "Last-Modified",
-          "Value": "Sun, 17 Nov 2024 00:14:48 GMT"
+          "Value": "Sun, 17 Nov 2024 14:16:49 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -216,7 +258,7 @@
         },
         {
           "Name": "Content-Length",
-          "Value": "239089"
+          "Value": "240722"
         },
         {
           "Name": "Content-Type",
@@ -224,11 +266,11 @@
         },
         {
           "Name": "ETag",
-          "Value": "\"QmYvAPvWhhl5DiiXk2bqJqnmy4c9h4tzPlMa68lGb7k=\""
+          "Value": "\"Py7iUfnEKawuaYZB7xI1BHLAQP39calrYTZQtXqmvtE=\""
         },
         {
           "Name": "Last-Modified",
-          "Value": "Sun, 17 Nov 2024 00:19:21 GMT"
+          "Value": "Mon, 18 Nov 2024 00:18:53 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -238,12 +280,12 @@
       "EndpointProperties": [
         {
           "Name": "integrity",
-          "Value": "sha256-QmYvAPvWhhl5DiiXk2bqJqnmy4c9h4tzPlMa68lGb7k="
+          "Value": "sha256-Py7iUfnEKawuaYZB7xI1BHLAQP39calrYTZQtXqmvtE="
         }
       ]
     },
     {
-      "Route": "css/styles.u9egaot9v8.css",
+      "Route": "css/styles.j7z0o14yf0.css",
       "AssetFile": "C:\\Users\\slavi\\source\\repos\\Login\\Login\\wwwroot\\css\\styles.css",
       "Selectors": [],
       "ResponseHeaders": [
@@ -253,7 +295,7 @@
         },
         {
           "Name": "Content-Length",
-          "Value": "239089"
+          "Value": "240722"
         },
         {
           "Name": "Content-Type",
@@ -261,11 +303,11 @@
         },
         {
           "Name": "ETag",
-          "Value": "\"QmYvAPvWhhl5DiiXk2bqJqnmy4c9h4tzPlMa68lGb7k=\""
+          "Value": "\"Py7iUfnEKawuaYZB7xI1BHLAQP39calrYTZQtXqmvtE=\""
         },
         {
           "Name": "Last-Modified",
-          "Value": "Sun, 17 Nov 2024 00:19:21 GMT"
+          "Value": "Mon, 18 Nov 2024 00:18:53 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -275,7 +317,7 @@
       "EndpointProperties": [
         {
           "Name": "fingerprint",
-          "Value": "u9egaot9v8"
+          "Value": "j7z0o14yf0"
         },
         {
           "Name": "label",
@@ -283,7 +325,52 @@
         },
         {
           "Name": "integrity",
-          "Value": "sha256-QmYvAPvWhhl5DiiXk2bqJqnmy4c9h4tzPlMa68lGb7k="
+          "Value": "sha256-Py7iUfnEKawuaYZB7xI1BHLAQP39calrYTZQtXqmvtE="
+        }
+      ]
+    },
+    {
+      "Route": "js/layout.dt4qyx8izr.js",
+      "AssetFile": "C:\\Users\\slavi\\source\\repos\\Login\\Login\\wwwroot\\js\\layout.js",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "5707"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/javascript"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"4SCBsfGu6BBokBGihkuvtwzdI/k0caEkv1v0KsVF2l0=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Sun, 17 Nov 2024 23:40:21 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "dt4qyx8izr"
+        },
+        {
+          "Name": "label",
+          "Value": "js/layout.js"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-4SCBsfGu6BBokBGihkuvtwzdI/k0caEkv1v0KsVF2l0="
         }
       ]
     },
@@ -298,7 +385,7 @@
         },
         {
           "Name": "Content-Length",
-          "Value": "1527"
+          "Value": "5707"
         },
         {
           "Name": "Content-Type",
@@ -306,11 +393,11 @@
         },
         {
           "Name": "ETag",
-          "Value": "\"Q5FhW/yJ8Yg5RyvA3rchNOcxSVc4PX0jFJi0Z3upXwI=\""
+          "Value": "\"4SCBsfGu6BBokBGihkuvtwzdI/k0caEkv1v0KsVF2l0=\""
         },
         {
           "Name": "Last-Modified",
-          "Value": "Sat, 16 Nov 2024 23:50:18 GMT"
+          "Value": "Sun, 17 Nov 2024 23:40:21 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -320,52 +407,7 @@
       "EndpointProperties": [
         {
           "Name": "integrity",
-          "Value": "sha256-Q5FhW/yJ8Yg5RyvA3rchNOcxSVc4PX0jFJi0Z3upXwI="
-        }
-      ]
-    },
-    {
-      "Route": "js/layout.n7z4yp6x46.js",
-      "AssetFile": "C:\\Users\\slavi\\source\\repos\\Login\\Login\\wwwroot\\js\\layout.js",
-      "Selectors": [],
-      "ResponseHeaders": [
-        {
-          "Name": "Accept-Ranges",
-          "Value": "bytes"
-        },
-        {
-          "Name": "Content-Length",
-          "Value": "1527"
-        },
-        {
-          "Name": "Content-Type",
-          "Value": "text/javascript"
-        },
-        {
-          "Name": "ETag",
-          "Value": "\"Q5FhW/yJ8Yg5RyvA3rchNOcxSVc4PX0jFJi0Z3upXwI=\""
-        },
-        {
-          "Name": "Last-Modified",
-          "Value": "Sat, 16 Nov 2024 23:50:18 GMT"
-        },
-        {
-          "Name": "Cache-Control",
-          "Value": "max-age=31536000, immutable"
-        }
-      ],
-      "EndpointProperties": [
-        {
-          "Name": "fingerprint",
-          "Value": "n7z4yp6x46"
-        },
-        {
-          "Name": "label",
-          "Value": "js/layout.js"
-        },
-        {
-          "Name": "integrity",
-          "Value": "sha256-Q5FhW/yJ8Yg5RyvA3rchNOcxSVc4PX0jFJi0Z3upXwI="
+          "Value": "sha256-4SCBsfGu6BBokBGihkuvtwzdI/k0caEkv1v0KsVF2l0="
         }
       ]
     },
@@ -530,6 +572,170 @@
         {
           "Name": "integrity",
           "Value": "sha256-8dwfeZjlywwhbIOlBiR/0HJjoF+gkblprUHXRAFkZJM="
+        }
+      ]
+    },
+    {
+      "Route": "Photos/AirMax90.jpg",
+      "AssetFile": "C:\\Users\\slavi\\source\\repos\\Login\\Login\\wwwroot\\Photos\\AirMax90.jpg",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "1618650"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/jpeg"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"p7nqIV56710dsFQwWc3A+z4NAKc5WQI9BIxTzDu1ftU=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Sun, 17 Nov 2024 13:30:40 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=3600, must-revalidate"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-p7nqIV56710dsFQwWc3A+z4NAKc5WQI9BIxTzDu1ftU="
+        }
+      ]
+    },
+    {
+      "Route": "Photos/AirMax90.nca56wz6sm.jpg",
+      "AssetFile": "C:\\Users\\slavi\\source\\repos\\Login\\Login\\wwwroot\\Photos\\AirMax90.jpg",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "1618650"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/jpeg"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"p7nqIV56710dsFQwWc3A+z4NAKc5WQI9BIxTzDu1ftU=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Sun, 17 Nov 2024 13:30:40 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "nca56wz6sm"
+        },
+        {
+          "Name": "label",
+          "Value": "Photos/AirMax90.jpg"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-p7nqIV56710dsFQwWc3A+z4NAKc5WQI9BIxTzDu1ftU="
+        }
+      ]
+    },
+    {
+      "Route": "Photos/AirMax90zute.gk4tzbzljv.jpg",
+      "AssetFile": "C:\\Users\\slavi\\source\\repos\\Login\\Login\\wwwroot\\Photos\\AirMax90zute.jpg",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "2242279"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/jpeg"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"YDsUfT+9+4lyrFxqRJp3KRkLIo8dCTbOHxTOZiaRz0U=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Sun, 17 Nov 2024 22:22:17 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "gk4tzbzljv"
+        },
+        {
+          "Name": "label",
+          "Value": "Photos/AirMax90zute.jpg"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-YDsUfT+9+4lyrFxqRJp3KRkLIo8dCTbOHxTOZiaRz0U="
+        }
+      ]
+    },
+    {
+      "Route": "Photos/AirMax90zute.jpg",
+      "AssetFile": "C:\\Users\\slavi\\source\\repos\\Login\\Login\\wwwroot\\Photos\\AirMax90zute.jpg",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "2242279"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/jpeg"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"YDsUfT+9+4lyrFxqRJp3KRkLIo8dCTbOHxTOZiaRz0U=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Sun, 17 Nov 2024 22:22:17 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=3600, must-revalidate"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-YDsUfT+9+4lyrFxqRJp3KRkLIo8dCTbOHxTOZiaRz0U="
         }
       ]
     }

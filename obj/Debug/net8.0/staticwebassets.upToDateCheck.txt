@@ -3,3 +3,5 @@ wwwroot\css\styles.css
 wwwroot\js\layout.js
 wwwroot\js\loginValidation.js
 wwwroot\js\registerValidation.js
+wwwroot\Photos\AirMax90.jpg
+wwwroot\Photos\AirMax90zute.jpg

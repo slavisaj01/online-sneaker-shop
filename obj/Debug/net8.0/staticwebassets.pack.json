@@ -1,6 +1,14 @@
 {
   "Files": [
     {
+      "Id": "C:\\Users\\slavi\\source\\repos\\Login\\Login\\wwwroot\\Photos\\AirMax90.jpg",
+      "PackagePath": "staticwebassets\\Photos\\AirMax90.jpg"
+    },
+    {
+      "Id": "C:\\Users\\slavi\\source\\repos\\Login\\Login\\wwwroot\\Photos\\AirMax90zute.jpg",
+      "PackagePath": "staticwebassets\\Photos\\AirMax90zute.jpg"
+    },
+    {
       "Id": "C:\\Users\\slavi\\source\\repos\\Login\\Login\\wwwroot\\css\\style.css",
       "PackagePath": "staticwebassets\\css\\style.css"
     },

@@ -1,86 +1,71 @@
 ﻿using Login.Data;
 using Login.Models;
-using Microsoft.AspNetCore.Authentication.Cookies;  // Dodaj za kolačiće
+using Microsoft.AspNetCore.Authentication.Cookies;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
-using Microsoft.Extensions.Options;
-using Microsoft.IdentityModel.Tokens;
-using System.Text;
 
-namespace Login
+var builder = WebApplication.CreateBuilder(args);
+
+// Dodavanje servisa za rad sa bazom podataka koristeći Entity Framework
+builder.Services.AddDbContext<ApplicationDbContext>(options =>
+    options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection")));
+
+// Dodavanje Identity servisa za korisnički menadžment (registracija, prijavljivanje, uloge)
+builder.Services.AddIdentity<User, IdentityRole>()
+    .AddEntityFrameworkStores<ApplicationDbContext>();
+
+// Registrujte ProductService (ako je to servis koji koristite za proizvode)
+builder.Services.AddScoped<ProductService>();  // Dodajte ProductService kao servis
+
+builder.Services.AddControllersWithViews(); // Omogućava podršku za MVC poglede (Views)
+
+builder.Services.AddEndpointsApiExplorer();
+builder.Services.AddSwaggerGen(); // Omogućava korišćenje Swagger-a za API dokumentaciju
+
+// Konfiguracija kolačića za autentifikaciju
+builder.Services.ConfigureApplicationCookie(options =>
 {
-    public class Program
-    {
-        public static void Main(string[] args)
-        {
-            var builder = WebApplication.CreateBuilder(args);
+    options.Cookie.HttpOnly = true;  // Kolačić je dostupan samo serveru
+    options.Cookie.SecurePolicy = CookieSecurePolicy.SameAsRequest;  // Kolačić je siguran samo ako je zahtev preko HTTPS-a
+    options.Cookie.SameSite = SameSiteMode.Lax;  // Postavljanje SameSite politike (Lax omogućava neke cross-site zahteve)
+    options.LoginPath = "/Public/Index";  // Putanja za login stranicu
+    options.LogoutPath = "/Account/Logout";  // Putanja za logout
+    options.SlidingExpiration = true;  // Omogućava obnavljanje kolačića tokom sesije
+    options.ExpireTimeSpan = TimeSpan.FromMinutes(30);  // Vreme trajanja kolačića (30 minuta)
+});
 
-            // Add services to the container.
-            builder.Services.AddDbContext<ApplicationDbContext>(options =>
-                options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection")));
+var app = builder.Build();
 
-            builder.Services.AddIdentity<User, IdentityRole>()
-                .AddEntityFrameworkStores<ApplicationDbContext>();
-
-            builder.Services.AddControllersWithViews(); // Add support for MVC views
-
-            builder.Services.AddEndpointsApiExplorer();
-            builder.Services.AddSwaggerGen();
-
-            // Configure the cookie settings for authentication
-            builder.Services.ConfigureApplicationCookie(options =>
-            {
-                // Obezbeđuje da kolačić bude dostupan samo serveru
-                options.Cookie.HttpOnly = true;
-
-                // Kolačić je siguran samo kada je zahtev preko HTTPS-a
-                options.Cookie.SecurePolicy = CookieSecurePolicy.SameAsRequest;
-
-                // Podešava politiku SameSite (Lax omogućava neke cross-site zahteve)
-                options.Cookie.SameSite = SameSiteMode.Lax;
-
-                // Putanja ka login stranici
-                options.LoginPath = "/Public/Index";
-
-                // Putanja za logout
-                options.LogoutPath = "/Account/Logout";
-
-                // Putanja koja se prikazuje kada korisnik pokušava pristupiti resursima bez odgovarajućih prava
-                //options.AccessDeniedPath = "/Account/AccessDenied";
-
-                // Omogućava obnavljanje kolačića tokom sesije
-                options.SlidingExpiration = true;
-
-                // Vreme trajanja kolačića (npr. 30 minuta)
-                options.ExpireTimeSpan = TimeSpan.FromMinutes(30);
-            });
-
-            var app = builder.Build();
-
-            // Configure the HTTP request pipeline.
-            if (app.Environment.IsDevelopment())
-            {
-                app.UseSwagger();
-                app.UseSwaggerUI();
-            }
-
-            app.UseHttpsRedirection();
-            app.UseStaticFiles(); // Enables static files like CSS, JS, images
-
-            app.UseRouting();
-
-            // Dodaj Middleware za autentifikaciju i autorizaciju
-            app.UseAuthentication();  // Ovdje mora biti
-            app.UseAuthorization();   // Ovdje mora biti
-
-            app.UseStatusCodePagesWithReExecute("/Error/{0}");
-
-            // Default MVC routing
-            app.MapControllerRoute(
-                name: "default",
-                pattern: "{controller=Home}/{action=Index}/{id?}");
-
-            app.Run();
-        }
-    }
+// Konfiguracija HTTP zahteva za razvojnu verziju aplikacije
+if (app.Environment.IsDevelopment())
+{
+    app.UseSwagger();  // Omogućava Swagger u razvojnoj verziji
+    app.UseSwaggerUI();  // Prikazuje UI za Swagger
 }
+
+app.UseHttpsRedirection();  // Preusmerava HTTP zahteve na HTTPS
+app.UseStaticFiles();  // Omogućava korišćenje statičkih fajlova (CSS, JS, slike)
+app.UseRouting();  // Omogućava rutiranje zahteva prema odgovarajućim kontrolerima
+
+// Dodavanje middleware-a za autentifikaciju i autorizaciju
+app.UseAuthentication();  // Middleware za autentifikaciju (korisnici se prijavljuju)
+app.UseAuthorization();   // Middleware za autorizaciju (korisnicima se dodeljuju prava pristupa)
+
+
+// Pozivanje SeedData klase za inicijalizaciju podataka prilikom pokretanja aplikacije
+using (var scope = app.Services.CreateScope())  // Kreira se opseg za servisnu instancu
+{
+    var services = scope.ServiceProvider;
+    var userManager = services.GetRequiredService<UserManager<User>>();  // Uzima UserManager servis
+    var roleManager = services.GetRequiredService<RoleManager<IdentityRole>>();// Uzima RoleManager servis
+    await SeedData.Initialize(services, userManager, roleManager);  // Inicijalizuje podatke (kreira korisnika i rolu ako nisu postojali)
+}
+
+app.UseStatusCodePagesWithReExecute("/Error/{0}");  // Prikazuje stranicu za greške ako dođe do problema sa status kodom
+
+// Definisanje default MVC rute
+app.MapControllerRoute(
+    name: "default",  // Ime rute
+    pattern: "{controller=Home}/{action=Index}/{id?}");  // Putanja prema kontrolerima i akcijama (default je Home/Index)
+
+app.Run();  // Pokreće aplikaciju

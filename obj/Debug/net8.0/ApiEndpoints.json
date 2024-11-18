@@ -40,5 +40,21 @@
       }
     ],
     "ReturnTypes": []
+  },
+  {
+    "ContainingType": "HomeApiController",
+    "Method": "AddProduct",
+    "RelativePath": "api/HomeApi/addproduct",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "product",
+        "Type": "Login.Models.Product",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
   }
 ]

@@ -5,11 +5,19 @@ namespace Login.Controllers
 {
     public class HomeController : Controller
     {
+        private readonly ProductService _productService;
+
+        public HomeController(ProductService productService)
+        {
+            _productService = productService;
+        }
+
         [HttpGet]
         [Authorize]
         public IActionResult HomePage()
         {
-            return View();
+            var products = _productService.GetAllProducts();
+            return View(products);
         }
     }
 }
