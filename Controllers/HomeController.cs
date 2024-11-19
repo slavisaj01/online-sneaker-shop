@@ -1,22 +1,24 @@
 ﻿using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
+using Login.Data; // Namespace za tvoj DbContext
+using System.Linq;
 
 namespace Login.Controllers
 {
     public class HomeController : Controller
     {
-        private readonly ProductService _productService;
+        private readonly ApplicationDbContext _context; // DbContext za direktan rad sa bazom
 
-        public HomeController(ProductService productService)
+        public HomeController(ApplicationDbContext context)
         {
-            _productService = productService;
+            _context = context;
         }
 
         [HttpGet]
         [Authorize]
         public IActionResult HomePage()
         {
-            var products = _productService.GetAllProducts();
+            var products = _context.Products.ToList(); // Dohvata sve proizvode iz baze
             return View(products);
         }
     }

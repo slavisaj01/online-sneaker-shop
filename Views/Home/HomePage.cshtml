@@ -4,6 +4,27 @@
     Layout = "~/Views/Home/_Layout.cshtml";
 }
 
+<!-- Modal za potvrdu brisanja -->
+<div class="modal" id="deleteModal" tabindex="-1" aria-labelledby="deleteConfirmationModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="deleteConfirmationModalLabel">Potvrdi brisanje</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                Da li ste sigurni da želite da obrišete ovaj proizvod?
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-danger modal-btn" id="confirm-yes">Obriši</button>
+                <button type="button" class="btn btn-secondary modal-btn" id="confirm-no">Otkaži</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
 <!-- Koristimo Bootstrap grid za raspored proizvoda u više kolona -->
 <div class="row" style="display: flex; justify-content: center; text-align: center;">
     @foreach (var product in Model)
@@ -33,14 +54,85 @@
                                 <i class="fas fa-box"></i> <!-- Ikona za proizvod koji nije na skladištu -->
                             }
                         </span>
+                        @if (User.IsInRole("Admin"))
+                        {
+                            <div class="d-flex gap-2">
+                                <!-- Ikonica za izmenu -->
+                                <a href="#" title="Izmeni proizvod" class="edit-product" data-id="@product.Id" style="color: #007bff;">
+                                    <i class="fas fa-edit"></i>
+                                </a>
+
+                                <!-- Ikonica za brisanje -->
+                                <a href="#" title="Obriši proizvod" class="delete-product" data-id="@product.Id" style="color: #dc3545;">
+                                    <i class="fas fa-trash"></i>
+                                </a>
+                            </div>
+                        }
                     </div>
 
                     <!-- Dugme za dodavanje u korpu -->
                     <a href="#" id="dodajproizvod" class="btn btn-custom w-100">
                         Dodaj u korpu
                     </a>
+                    <div style="text-align: right; margin-top: 10px;">
+                        <a href="#" style="font-size: 0.9rem; color: #432054; text-decoration: none;">
+                            Više >>>
+                        </a>
+                    </div>
                 </div>
             </div>
         </div>
     }
 </div>
+<!-- Modal for update product -->
+<div class="modal fade" id="updateProductModal" tabindex="-1" aria-labelledby="updateProductModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="updateProductModalLabel">Izmeni Proizvod</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <!-- Form for updating product -->
+                <form id="updateProductForm">
+                    <input type="hidden" id="productId" name="productId">
+                    <div class="mb-3">
+                        <label for="updateProductName" class="form-label">Naziv proizvoda</label>
+                        <input type="text" class="form-control" id="updateProductName" name="updateProductName" required>
+                        <span class="text-danger" id="updateProductName-error" data-valmsg-for="updateProductName" data-valmsg-replace="true"></span>
+                    </div>
+                    <div class="mb-3">
+                        <label for="updateProductBrand" class="form-label">Brend</label>
+                        <input type="text" class="form-control" id="updateProductBrand" name="updateProductBrand" required>
+                        <span class="text-danger" id="updateProductBrand-error" data-valmsg-for="updateProductBrand" data-valmsg-replace="true"></span>
+                    </div>
+                    <div class="mb-3">
+                        <label for="updateProductPrice" class="form-label">Cena</label>
+                        <input type="number" class="form-control" id="updateProductPrice" name="updateProductPrice" required>
+                        <span class="text-danger" id="updateProductPrice-error" data-valmsg-for="updateProductPrice" data-valmsg-replace="true"></span>
+                    </div>
+                    <div class="mb-3">
+                        <label for="updateProductImageUrl" class="form-label">URL Slike</label>
+                        <input type="text" class="form-control" id="updateProductImageUrl" name="updateProductImageUrl" required>
+                        <span class="text-danger" id="updateProductImageUrl-error" data-valmsg-for="updateProductImageUrl" data-valmsg-replace="true"></span>
+                    </div>
+                    <div class="mb-3">
+                        <label for="updateProductQuantity" class="form-label">Količina</label>
+                        <input type="number" class="form-control" id="updateProductQuantity" name="updateProductQuantity" required>
+                        <span class="text-danger" id="updateProductQuantity-error" data-valmsg-for="updateProductQuantity" data-valmsg-replace="true"></span>
+                    </div>
+                    <div class="mb-3">
+                        <label for="updateProductSize" class="form-label">Veličina</label>
+                        <input type="text" class="form-control" id="updateProductSize" name="updateProductSize" required>
+                        <span class="text-danger" id="updateProductSize-error" data-valmsg-for="updateProductSize" data-valmsg-replace="true"></span>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="submit" class="btn btn-custom w-40" id="updateProductButton">Izmeni proizvod</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+
