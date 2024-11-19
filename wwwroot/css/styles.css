@@ -196,3 +196,145 @@ label.error {
     .modal-btn#confirm-no:hover {
         background-color: #5a6268; /* Tamniji sivi ton pri hover-u */
     }
+
+/* Modal info pozadina */
+/* Modal */
+/* Modal */
+.modal-info {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.7); /* Tamna pozadina */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 999;
+}
+
+    /* Sadržaj modala */
+    .modal-info .modal-content {
+        background-color: #ffffff;
+        border-radius: 12px;
+        box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2);
+        display: flex;
+        max-width: 900px; /* Maksimalna širina */
+        width: 90%;
+        padding: 30px;
+        text-align: left;
+        position: relative; /* Dodajemo position: relative za dugme */
+        transform: scale(0.95);
+        transition: transform 0.3s ease-in-out;
+    }
+
+        /* Efekat animacije pri otvaranju */
+        .modal-info .modal-content.open {
+            transform: scale(1);
+        }
+
+    /* Srediti modal naslov i detalje */
+    .modal-info .product-details {
+        flex: 1;
+        padding: 20px;
+        color: #444;
+    }
+
+    /* Stil za sliku proizvoda */
+    .modal-info .product-image-container {
+        flex: 0 0 450px; /* Manja širina za sliku */
+        position: relative;
+        padding: 20px;
+        display: flex;
+        justify-content: center;
+    }
+
+    .modal-info .product-image {
+        width: 100%;
+        max-width: 400px; /* Povećana širina slike */
+        height: auto;
+        border-radius: 12px;
+        box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    }
+
+    /* Naslov proizvoda */
+    .modal-info #productTitle {
+        font-size: 2rem;
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        margin-bottom: 15px;
+        color: #432054;
+    }
+
+    /* Opis proizvoda */
+    .modal-info #productDescription {
+        font-size: 1.1rem;
+        color: #666;
+        line-height: 1.5;
+    }
+
+    /* Podnaslovi za brend, cenu i veličine */
+    .modal-info #productBrand,
+    .modal-info #productPrice,
+    .modal-info #productSize {
+        margin-bottom: 20px;
+        color: #555;
+        font-weight: 600;
+    }
+
+    /* Dugme za zatvaranje modala (postavljeno u donji desni ugao) */
+    .modal-info .close-btn-container {
+        position: absolute; /* Pozicioniramo kontejner relativno prema roditeljskom elementu */
+        bottom: 20px; /* Razmak od donje ivice */
+        right: 20px; /* Razmak od desne ivice */
+    }
+
+    /* Dugme za zatvaranje */
+    .modal-info .close-btn {
+        background-color: #432054;
+        color: white;
+        border: none;
+        padding: 12px 30px;
+        font-size: 1.1rem;
+        cursor: pointer;
+        border-radius: 8px;
+        transition: background-color 0.3s ease;
+    }
+
+        /* Efekat pri prelasku mišem na dugme */
+        .modal-info .close-btn:hover {
+            background-color: #624d7f;
+        }
+
+    /* Zatvaranje dugmeta za modal (gore desno) */
+    .modal-info .close {
+        position: absolute;
+        top: 15px;
+        right: 15px;
+        font-size: 1.8rem;
+        color: #432054;
+        cursor: pointer;
+        font-weight: bold;
+        transition: color 0.3s ease;
+    }
+
+        .modal-info .close:hover {
+            color: #624d7f;
+        }
+
+    /* Dodaj stil za raspored elementa unutar modala */
+    .modal-info .modal-content {
+        display: flex;
+        justify-content: space-between;
+        align-items: flex-start;
+    }
+
+    /* Povećaj razmak između slike i opisa */
+    .modal-info .product-details {
+        flex: 1;
+        margin-left: 20px; /* Razmak između slike i opisa */
+    }
+
+        /* Prikazivanje elemenata za brend, cenu, veličinu i dostupnost */
+        .modal-info .product-details p {
+            margin: 10px 0;
+        }

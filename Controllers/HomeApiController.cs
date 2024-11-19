@@ -91,7 +91,7 @@ public class HomeApiController : ControllerBase
         return Ok(new { message = "Proizvod uspešno obrisan." });
     }
     [HttpGet("getproduct/{id}")]
-    [Authorize(Roles = "Admin")]
+    [Authorize]
     public IActionResult GetProduct(int id)
     {
         var product = _context.Products.FirstOrDefault(p => p.Id == id);

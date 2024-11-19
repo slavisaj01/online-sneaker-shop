@@ -231,44 +231,133 @@
         });
     });
 
-    $('#updateProductForm').on('submit', function (e) {
-        e.preventDefault();
-
-        var productId = $('#productId').val(); // Uzimaš ID proizvoda iz skrivenog inputa
-        var productData = {
-            name: $('#updateProductName').val(),
-            brand: $('#updateProductBrand').val(),
-            price: $('#updateProductPrice').val(),
-            imageUrl: $('#updateProductImageUrl').val(),
-            quantity: $('#updateProductQuantity').val(),
-            size: $('#updateProductSize').val()
-        };
-
-        // Proveri da li su svi podaci popunjeni
-        if ( !productData.name || !productData.brand || !productData.price || !productData.quantity || !productData.size) {
-            alert('Sva polja moraju biti popunjena!');
-            return;
-        }
-
-        // Pozivaš AJAX poziv za ažuriranje proizvoda
-        $.ajax({
-            url: '/api/homeapi/editproduct/' + productId, // API ruta za ažuriranje proizvoda
-            type: 'PUT',
-            contentType: 'application/json',
-            data: JSON.stringify(productData), // Slanje podataka u JSON formatu
-            success: function (response) {
-                if (response.message) {
-                    alert(response.message); // Prikazuje poruku o uspehu
-                    $('#updateProductModal').modal('hide'); // Zatvori modal
-                    // Ovdje možeš dodati kod za osvežavanje liste proizvoda ili drugu akciju
-                }
+    $("#updateProductForm").validate({
+        rules: {
+            updateProductName: {
+                required: true,
+                maxlength: 100
             },
-            error: function (xhr, status, error) {
-                alert('Došlo je do greške prilikom izmene proizvoda.');
+            updateProductBrand: {
+                required: true,
+                maxlength: 50
+            },
+            updateProductPrice: {
+                required: true,
+                positiveNumber: true
+            },
+            updateProductImageUrl: {
+                validUrl: true
+            },
+            updateProductQuantity: {
+                required: true,
+                min: 0
+            },
+            updateProductSize: {
+                required: true,
+                maxlength: 3,
+                digits: true
+            }
+        },
+        messages: {
+            updateProductName: {
+                required: "Ime proizvoda je obavezno.",
+                maxlength: "Ime proizvoda ne može biti duže od 100 karaktera."
+            },
+            updateProductBrand: {
+                required: "Brend je obavezan.",
+                maxlength: "Brend ne može biti duži od 50 karaktera."
+            },
+            updateProductPrice: {
+                required: "Cena je obavezna.",
+                positiveNumber: "Cena mora biti veća od 0."
+            },
+            updateProductImageUrl: {
+                validUrl: "URL slike nije u validnom formatu."
+            },
+            updateProductQuantity: {
+                required: "Količina je obavezna.",
+                min: "Količina ne može biti manja od 0."
+            },
+            updateProductSize: {
+                required: "Velicina je obavezna.",
+                maxlength: "Velicina može imati maksimalno 3 karaktera.",
+                digits: "Velicina mora biti broj."
+            }
+        },
+        submitHandler: function (form) {
+            // Ako je forma validna, šaljemo podatke na server
+            var productId = $('#productId').val(); // Uzmi ID proizvoda iz skrivenog inputa
+            var productData = {
+                name: $('#updateProductName').val(),
+                brand: $('#updateProductBrand').val(),
+                price: $('#updateProductPrice').val(),
+                imageUrl: $('#updateProductImageUrl').val(),
+                quantity: $('#updateProductQuantity').val(),
+                size: $('#updateProductSize').val()
+            };
+
+            $.ajax({
+                url: '/api/homeapi/editproduct/' + productId, // API ruta za ažuriranje proizvoda
+                type: 'PUT',
+                contentType: 'application/json',
+                data: JSON.stringify(productData), // Slanje podataka u JSON formatu
+                success: function (response) {
+                    if (response.message) {
+                        $('#updateProductModal').modal('hide'); // Zatvori modal
+                        $("#notification-message").text(response.message);
+                        $("#notification").css("background-color", "#28a745"); // Uspeh
+                        $("#notification").fadeIn();
+
+                        $("#okButton").click(function () {
+                            window.location.href = "/Home/HomePage";
+                        });
+                    }
+                },
+                error: function (xhr, status, error) {
+                    alert('Došlo je do greške prilikom izmene proizvoda.');
+                }
+            });
+        }
+    });
+    $(document).on('click', '.btnView', function (e) {
+        e.preventDefault();  // Sprečava podrazumevani klik na link
+
+        var productId = $(this).data('id');  // Preuzimamo ID proizvoda
+
+        // Pozivamo metodu koja vraća proizvod prema ID-u putem AJAX-a
+        $.ajax({
+            url: '/api/homeapi/getproduct/' + productId,  // API ruta za uzimanje podataka o proizvodu
+            type: 'GET',
+            success: function (response) {
+                // Ako proizvod nije pronađen, prikazujemo poruku
+                if (response.message) {
+                    alert(response.message);
+                    return;
+                }
+
+                // Popunjavaš modal sa podacima
+                $('#productTitle').text(response.productName);
+                $('#productDescription').html(`
+                <strong>Brend:</strong> ${response.productBrand} <br>
+                <strong>Cena:</strong> ${response.productPrice}€ <br>
+                <strong>Veličina:</strong> ${response.productSize} <br>
+                <strong>Dostupnost:</strong> ${response.productQuantity> 0 ? 'Na skladištu' : 'Nema na skladištu'} <br>
+            `);
+                $('#productImage').attr('src', response.productImageUrl);  // Dodajemo sliku u modal
+
+                // Prikazujemo modal
+                $('#infoProduct').fadeIn();
+            },
+            error: function () {
+                alert('Došlo je do greške prilikom učitavanja proizvoda.');
             }
         });
     });
 
-
+    // Zatvaranje modala
+    $(document).on('click', '.close, .close-btn', function () {
+        $('#infoProduct').fadeOut();  // Zatvori modal
+    });
 
 });
+//ovde

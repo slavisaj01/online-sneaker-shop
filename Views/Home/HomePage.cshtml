@@ -23,8 +23,6 @@
     </div>
 </div>
 
-
-
 <!-- Koristimo Bootstrap grid za raspored proizvoda u više kolona -->
 <div class="row" style="display: flex; justify-content: center; text-align: center;">
     @foreach (var product in Model)
@@ -75,7 +73,7 @@
                         Dodaj u korpu
                     </a>
                     <div style="text-align: right; margin-top: 10px;">
-                        <a href="#" style="font-size: 0.9rem; color: #432054; text-decoration: none;">
+                        <a href="#" class="btnView" data-id="@product.Id" style="font-size: 0.9rem; color: #432054; text-decoration: none;">
                             Više >>>
                         </a>
                     </div>
@@ -135,4 +133,19 @@
     </div>
 </div>
 
+<!-- Modal Popup (infoProduct) -->
+<div id="infoProduct" style="display: none;"  class="modal-info">
+    <div class="modal-content">
+        <span class="close">&times;</span>
+        <div class="modal-image-container">
+            <img id="productImage" class="product-image" src="" alt="Proizvod">
+        </div>
+        <div class="product-details">
+            <h2 id="productTitle">Detalji o proizvodu</h2>
+            <div id="productDescription">
 
+            </div>
+            <button class="close-btn">Zatvori</button>
+        </div>
+    </div>
+</div>
