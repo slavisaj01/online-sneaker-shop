@@ -12,7 +12,7 @@ Online Sneaker Shop is an e-commerce platform where users can browse, view, and 
 
 ## Technologies Used
 
-- **Frontend**: JQuery, HTML, CSS, Bootstrap
+- **Frontend**: JQuery, Bootstrap
 - **Backend**: .NET Core (C#), ASP.NET Core MVC
 - **Database**: SQL Server (SSMS)
 - **Authentication**: Cookies for user session management
